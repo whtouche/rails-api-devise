@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ngDeviseApp">
+<head>
+  <title>Angular and Devise Playground</title>
+
+<div ng-controller="navController" ng-init="whoUser()">
+<div ng-show="loggedOut">
+<a href='/#/signin'>Sign in</a> | <a href='/#/signup'>Sign up</a>
+</div>
+<div ng-hide="loggedOut">
+Signed in as {{user.email}} | <a href='#' ng-click="logout()">Sign Out</a>
+</div>
+
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/angular-resource.min.js"></script>
+  <script src="scripts/angular-route.min.js"></script>
+  <script src="scripts/devise.js"></script>
+  <script src="app/main.js"></script>
+  <script src="app/services/userFactory.js"></script>
+  <script src="app/controllers/mainController.js"></script>
+  <script src="app/controllers/navController.js"></script>
+
+</body>
+</html>

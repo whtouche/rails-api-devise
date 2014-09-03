@@ -1,0 +1,16 @@
+<h3>Sign Up</h3>
+<form ng-submit="sendRegistration()">
+  <div>
+    <label>Email address</label>
+    <input type="email" ng-model="email" placeholder="Enter email">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" ng-model="password" placeholder="Enter password">
+  </div>
+  <div>
+  <label>Confirm Password</label>
+  <input type="password" ng-model="confirmPassword" placeholder="Confirm password">
+  </div>
+  <button type="submit">Sign Up</button></form>
+<!-- Need to add validation so that password and confirmPassword are the same -->
