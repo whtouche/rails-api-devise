@@ -1,4 +1,4 @@
-ngDeviseApp.factory("userFactory", ['$http', 'Auth', function($http, Auth){
+ngDeviseApp.factory("userFactory", ['$http', 'Auth', '$cookieStore', function($http, Auth, $cookieStore){
 
   var factory = {};
 
@@ -13,9 +13,13 @@ ngDeviseApp.factory("userFactory", ['$http', 'Auth', function($http, Auth){
     return Auth.logout();
   };
   factory.whoAmI = function(){
-    return Auth.currentUser().then(function(user) {
+     return Auth.currentUser().then(function(user) {
       console.log(user);
     });
+  };
+
+  factory.loggedIn = function(){
+    return Auth.isAuthenticated();
   };
 
   return factory;

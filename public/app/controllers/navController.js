@@ -1,7 +1,7 @@
 ngDeviseApp.controller("navController", ["$scope", "userFactory", "$location", "$route", function($scope, userFactory, $location, $route){
 
   // $scope.loggedOut = true;
-    $scope.whoUser = function(){
+  $scope.whoUser = function(){
     userFactory.whoAmI();
   };
 
@@ -9,7 +9,7 @@ ngDeviseApp.controller("navController", ["$scope", "userFactory", "$location", "
     userFactory.signout().then(function(user)
     {
       console.log("Logged out");
-      $scope.loggedOut = !$scope.loggedOut;
+      $scope.loggedOut = true;
       // $route.reload();
       //$location.path('/');
     }, function(error){
@@ -19,7 +19,7 @@ ngDeviseApp.controller("navController", ["$scope", "userFactory", "$location", "
   };
 
   $scope.$on("devise:new-session", function(event, currentUser) {
-    $scope.loggedOut = !$scope.loggedOut;
+    $scope.loggedOut = false;
   });
 
 }]);
